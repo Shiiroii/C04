@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: liulm <liulm@student.42.fr>                +#+  +:+       +#+        */
+/*   By: lionelulm <lionelulm@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/23 12:52:25 by liulm             #+#    #+#             */
-/*   Updated: 2024/07/23 12:58:20 by liulm            ###   ########.fr       */
+/*   Updated: 2024/07/24 01:06:40 by lionelulm        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,11 @@ void	ft_putchar(char c)
 
 void	print_in_binary(int nb)
 {
-	
+	if (nb >= 2)
+	{
+		print_in_binary(nb / 2);
+	}
+	ft_putchar(nb % 2 + '0');
 }
 
 void	print_in_hexadecimal(int nb)

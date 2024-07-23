@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: liulm <liulm@student.42.fr>                +#+  +:+       +#+        */
+/*   By: lionelulm <lionelulm@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/23 10:38:39 by liulm             #+#    #+#             */
-/*   Updated: 2024/07/23 12:50:09 by liulm            ###   ########.fr       */
+/*   Updated: 2024/07/24 01:03:49 by lionelulm        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_atoi(char *str)
 	i = 0;
 	result = 0;
 	sign = 1;
-	while ((str[i] == 32 || str[i] >= 9) && str[i] <= 13)
+	while ((str[i] == ' ' || str[i] >= '\t') && str[i] <= '\r')
 	{
 		i++;
 	}
