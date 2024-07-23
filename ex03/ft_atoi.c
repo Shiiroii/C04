@@ -6,7 +6,7 @@
 /*   By: liulm <liulm@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/23 10:38:39 by liulm             #+#    #+#             */
-/*   Updated: 2024/07/23 10:44:49 by liulm            ###   ########.fr       */
+/*   Updated: 2024/07/23 12:50:09 by liulm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	ft_atoi(char *str)
 	{
 		i++;
 	}
-	if (str[i] == '-' || str[i] = '+')
+	if (str[i] == '-' || str[i] == '+')
 	{
 		if (str[i] == '-')
 			sign = -1;
@@ -33,5 +33,7 @@ int	ft_atoi(char *str)
 	{
 		result *= 10;
 		result += str[i] - '0';
+		i++;
 	}
+	return (result * sign);
 }
