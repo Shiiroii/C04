@@ -37,3 +37,15 @@ int	ft_atoi(char *str)
 	}
 	return (result * sign);
 }
+
+// --------------------------------------------
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void)
+{
+	char s[] = "a";
+	printf("%d %d", ft_atoi(s), atoi(s));
+	return (0);
+}
