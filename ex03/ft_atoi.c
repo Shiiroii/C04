@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lionelulm <lionelulm@student.42.fr>        +#+  +:+       +#+        */
+/*   By: liulm <liulm@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/23 10:38:39 by liulm             #+#    #+#             */
-/*   Updated: 2024/07/24 01:03:49 by lionelulm        ###   ########.fr       */
+/*   Updated: 2024/07/25 13:32:10 by liulm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,14 @@ int	ft_atoi(char *str)
 	i = 0;
 	result = 0;
 	sign = 1;
-	while ((str[i] == ' ' || str[i] >= '\t') && str[i] <= '\r')
+	while (str[i] == ' ' || (str[i] >= '\t' && str[i] <= '\r'))
 	{
 		i++;
 	}
-	if (str[i] == '-' || str[i] == '+')
+	while (str[i] == '-' || str[i] == '+')
 	{
 		if (str[i] == '-')
-			sign = -1;
+			sign *= -1;
 		i++;
 	}
 	while (str[i] && str[i] >= '0' && str[i] <= '9')
@@ -41,11 +41,14 @@ int	ft_atoi(char *str)
 // --------------------------------------------
 
 #include <stdio.h>
-#include <stdlib.h>
 
 int main(void)
 {
-	char s[] = "a";
-	printf("%d %d", ft_atoi(s), atoi(s));
+	printf("%d\n", ft_atoi("42"));
+	printf("%d\n", ft_atoi("-42"));
+	printf("%d\n", ft_atoi("1234a56"));
+	printf("%d\n", ft_atoi("--++-123"));
+	printf("%d\n", ft_atoi("--+--123"));
+	printf("%d\n", ft_atoi(" ---+--+1234ab567"));
 	return (0);
 }
